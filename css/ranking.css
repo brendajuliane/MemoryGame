@@ -10,40 +10,56 @@ body{
 }
 
 .header{
-    background-color: green;
-    width: 100%;
-    height: 45px;
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
 }
 
+.goBackButton{
+    background-color: #E84040;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 50px;
+}
+
+/*-----------------------------------------------------------------------------------------------*/
 .darkScreen{
-background-color: rgba(0, 0, 0, 0.288);
-display: block;
+background-color: rgba(0, 0, 0, 0.6);
 width: 100%;
-height: 100%;
+height: 100vh;
 }
 
 /*-----------------------------------------------------------------------------------------------*/
 
 .boardContainer{
-    background-color: aqua;
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
+    margin-top: -35px;
 }
 
 .board{
-    background-color: white;
-    width: 300px;
+    background-color: rgb(255, 234, 234);
+    width: 500px;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: #FF9E9E solid 10px;
+    border-radius: 30px;
+}
+
+.rankingText{
+    color:#FC5151;
+    font-size: 30pt;
+    font-weight: 800;
 }
 
 /*-----------------------------------------------------------------------------------------------*/
 .rankContainer{
-background-color: black;
 width: 100%;
 height: auto;
 display: flex;
@@ -54,20 +70,20 @@ padding-top: 50px;
 }
 
 .podiumContainer{
-background-color: blueviolet;
 width: auto;
 height: 10px;
 display: flex;
 align-items: flex-end;
-margin-top: 200px;
+margin-top: 300px;
 }
 
 .othersContainer{
-    background-color: burlywood;
+    background-color: #FFF1BE;
     width: 800px;
     height: 100px;
     display: flex;
-    z-index: 1;
+    border: #FFBFA4 solid 8px;
+    border-radius: 25px;
 
 }
 
@@ -77,7 +93,11 @@ margin-top: 200px;
 .podium{
     background-color: antiquewhite;
     width: 200px;
-    height: 300px;
+    height: 250px;
+    border-radius: 15px 15px 0px 0px;
+    border-width: 5px 5px 0px 5px;
+    border-style: solid;
+    padding: 5px;
 
 }
 
@@ -88,17 +108,35 @@ text-align: center;
 .podiumUsername{
 color: white;
 font-size: 20pt;
+text-border: #FF6767 solid 3px;
 }
 
 #firstPlace{
-    background-color: yellow;
+    background-color: #FFDB1E;
+    border-color:#FFA51E ;
 }
 
 #secondPlace{
-    height: 250px;
+    height: 200px;
+    background-color: #bbbbbb;
+    border-color:#9b9999 ;
 }
 
 #thirdPlace{
-    height: 200px;
+    height: 150px;
+    background-color: #CB5034;
+    border-color:#A12D2D ;
+}
+
+.place{
+    color: white;
+font-size: 35pt;
+margin: 5px;
+}
+
+.data{
+    background-color: rgba(0, 0, 0, 0.705);
+    border-radius: 30px;
+
 }
 
