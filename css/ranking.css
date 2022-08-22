@@ -24,14 +24,14 @@ body{
     border-radius: 50px;
 }
 
-/*-----------------------------------------------------------------------------------------------*/
+/*------------------------------DARKSCREEN-----------------------------------------------------------------*/
 .darkScreen{
 background-color: rgba(0, 0, 0, 0.6);
 width: 100%;
-height: 100vh;
+height: 100%;
 }
 
-/*-----------------------------------------------------------------------------------------------*/
+/*--------------------------------------BOARD---------------------------------------------------------*/
 
 .boardContainer{
     width: 100%;
@@ -42,7 +42,7 @@ height: 100vh;
 }
 
 .board{
-    background-color: rgb(255, 234, 234);
+    background-color: #ffeaea;
     width: 500px;
     height: 100px;
     display: flex;
@@ -58,7 +58,7 @@ height: 100vh;
     font-weight: 800;
 }
 
-/*-----------------------------------------------------------------------------------------------*/
+/*------------------------------------------CONTAINERS-----------------------------------------------------*/
 .rankContainer{
 width: 100%;
 height: auto;
@@ -80,10 +80,11 @@ margin-top: 300px;
 .othersContainer{
     background-color: #FFF1BE;
     width: 800px;
-    height: 100px;
-    display: flex;
+    height: auto;
     border: #FFBFA4 solid 8px;
     border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 20px;
 
 }
 
@@ -98,6 +99,9 @@ margin-top: 300px;
     border-width: 5px 5px 0px 5px;
     border-style: solid;
     padding: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
 }
 
@@ -129,14 +133,74 @@ text-border: #FF6767 solid 3px;
 }
 
 .place{
-    color: white;
+color: rgb(255, 255, 255);
 font-size: 35pt;
 margin: 5px;
 }
 
+
+/*---------------Podium Content-----------------------------*/
 .data{
-    background-color: rgba(0, 0, 0, 0.705);
-    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.405);
+    border-radius: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 160px;
+    height: auto;
+    padding: 10px;
+    color: white;
 
 }
 
+.textContainer{
+    width: 70px;
+    font-size: 9pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dataText{
+    font-size: 9pt;
+}
+
+.dataTitle{
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------*/
+/*--------------------------------------OTHERS CSS---------------------------------------------------------*/
+
+.othersContentLight, .othersContentDark{
+    background-color: #FBFBFB;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: #B85A5A;
+    position: relative;
+
+
+}
+
+.othersContentDark{
+    background-color: #FFF1BE;
+
+}
+
+.othersText{
+font-size: 12pt;
+font-weight: bold;
+}
+
+.othersPlace{
+font-size: 22pt;
+font-weight: 900;
+}
