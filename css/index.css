@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+}
+body { 
+    background-image: url(/img/background.png);
+    background-repeat: repeat;
+}
+.main {
+    background-color: #FFF1BE;
+    position: absolute;
+    width: 38%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    border: 6px solid rgba(255, 191, 164, 1);
+    display: flex;
+    flex-direction: column;
+}
+#imgLogo {
+    max-width:60%;  
+    width: auto;
+    height: auto;
+}
+.gameModeButton {
+    width: 60%;
+    height: 15%;
+    background: #A4CCFC;
+    border: 6px solid #A6AEFC;
+    border-radius: 50px;
+}
+.buttonText {
+    font-family: 'Inter';
+    font-style: normal;
+    color: white;
+}
