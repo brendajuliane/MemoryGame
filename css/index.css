@@ -37,9 +37,23 @@ body {
     width: 55%;
     height: 15%;
     background: #A4CCFC;
-    border: 6px solid #A6AEFC;
+    border: 6px solid #A6AEFC; 
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
     color: white;
     font-size: 20px;
+}
+#section {
+    position: absolute;
+    right: 0%;
+    height: 100%;
+}
+.icon {
+    width: 50px;
+    padding: 10px;
+}
+footer {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
 }
