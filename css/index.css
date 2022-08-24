@@ -7,7 +7,7 @@
     list-style: none;
 }
 body { 
-    background-image: url(/img/background.png);
+    background-image: url(../img/background.png);
     background-repeat: repeat;
 }
 .main {
@@ -39,8 +39,6 @@ body {
     background: #A4CCFC;
     border: 6px solid #A6AEFC;
     border-radius: 50px;
-}
-.buttonText {
     font-family: 'Inter', sans-serif;
     color: white;
     font-size: 20px;
