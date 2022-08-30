@@ -25,17 +25,15 @@ body {
     align-items: center;
     gap: 13px;
 }
-#imgLogo {
-    max-width:65%;  
-    width: auto;
-    height: auto;
+#imgLogo {  
+    width: 300px;
     padding: 40px;
     position: relative;
     bottom: 20px;
 }
 .gameModeButton {
-    width: 55%;
-    height: 15%;
+    width: 300px;
+    height: 90px;
     background: #A4CCFC;
     border: 6px solid #A6AEFC; 
     border-radius: 50px;
