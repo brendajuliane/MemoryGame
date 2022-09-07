@@ -8,23 +8,29 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <div>
-        <div class="form">
-            <p class="label">Cadastre-se</p>
-        <form action="index.html" method="get">
+    <div class="form">
+        <p class="label">Cadastre-se</p>
+            <!-- <form action="index.html" method="get"> -->
+            <div class="inputs">
             <input type="text" class="form textBox name" placeholder="Nome Completo" required><br>
             <input type="text" class="form textBox cellphone" placeholder="Celular" required><br><br>
+            </div>
+            <div class="inputs">
             <input type="text" class="form textBox user" placeholder="Usuário" required><br><br>
             <input type="text" class="form textBox cpf" placeholder="CPF" required><br><br>
+            </div>
+            <div class="inputs">
             <input type="password" class="form textBox password" placeholder="Senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
             title="Senha deve ter no mínimo um número, uma letra minúscula, uma letra maiúscula e 8 caracteres" required><br><br>
             <input type="password" class="form textBox password" placeholder="Confirmar Senha" required><br><br>
+            </div>
+            <div class="inputs">
             <input type="text" class="form textBox date" placeholder="Data de Nascimento" title="DD/MM/YY" required><br><br> 
             <input type="email" class="form textBox email" placeholder="E-mail" required><br><br>
+            </div>
             <button class="form button">Cadastrar</button><br><br>
             <p><a href="login.html">Já possui uma conta? Faça Login!</a>  </p>          
-        </form>   
+        <!-- </form>    -->
     </div>
-</div>
 </body>
 </html>
