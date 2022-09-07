@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+}
+body { 
+    background-image: url(../img/background.png);
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main {
+    background-color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 60px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 30px;
+    border: 6px solid #FF6161;
+    border-radius: 25px;
+    position: relative;
+}
+p{
+    padding-bottom: 30px;
+}
+div {
+    padding-top: 15px;
+    display: flex;
+    gap: 40px;
+}
+.button {
+    height: 65px;
+    width: 180px;
+    background-color: #B7B7B7;
+    border: 5px #CFCFCF solid;
+    border-radius: 22px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+#simButton {
+    border: 5px #FFF0B9 solid;
+    background-color: #FFD74B;
+}
