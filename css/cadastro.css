@@ -129,8 +129,9 @@ body {
     background-image: url(../img/calendar.png);
 }
 .button {
-    width: auto;
-    height: auto;
+    width: 10px;
+    align-items: center;
+    align-self: center;
     background-color: #FFD74B;
     border-color: #FFF0B9;
     border-radius: 20px;
@@ -147,5 +148,5 @@ body {
     font-size: 28pt;
     font-weight: 800;
     padding-bottom: 30px;
-    text-align: center;
+    text-align: left;
 }
