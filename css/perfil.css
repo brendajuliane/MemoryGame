@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+}
+html {
+    height: 100%;
+}
+body {
+    background-image: url(../img/background.png); 
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    background-color: white;
+    border: 8px solid #FF6161;
+    border-radius: 25px;
+    padding: 25px;
+    color: #605454;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/*--------- Cadastral informations ---------*/
+.userBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 200px;
+}
+
+.informationBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.title {
+    font-size: 14pt;
+}
+
+.cadastralInformation, .numberInformation {
+    background-color: #F5F5F5;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subInformationalBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    gap: 15px;
+}
+
+.cadastralInformation {
+    padding: 10px;
+    width: 300px;
+    height: 90px;
+}
+
+/*--------- Number informations ---------*/
+.numberBox {
+    display: flex;
+    gap: 15px;
+}
+.numberInformation {
+    padding: 10px;
+    font-size: 11pt;
+    width: 140px;
+    height: 90px;
+}
+.number, .numberDefeat, .numberWin {
+    font-size: 45px;
+    font-weight: bold;
+}
+.numberDefeat, .informationDefeat {
+    color: #D02060;
+}
+.numberWin, .informationWin {
+    color: #20D047;
+}
