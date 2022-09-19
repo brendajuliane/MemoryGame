@@ -22,7 +22,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    }    
+    }
+header {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}    
 main {
     background-color: white;
     border: 8px solid #FF6161;
