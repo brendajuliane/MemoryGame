@@ -6,7 +6,7 @@ body {
     background-image: url(../img/background.png);
     display: flex;
     justify-content: center;
-    padding-top: 200px;
+    padding-top: 6%;
 }
 
 .form {
@@ -21,6 +21,8 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-self: center;
 }
 .inputs{
     display: flex;
@@ -142,4 +144,7 @@ form button {
 
 p{
     padding-top: 15px;
+}
+a{
+    color : #fc5151;
 }
