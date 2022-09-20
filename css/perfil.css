@@ -55,12 +55,14 @@ main {
     align-items: center;
     border-radius:  50%;
     background-color: #CBCBCB;
-    margin-top: -60px;
+    margin-top: -140px;
     /* overflow: hidden; */
 }
 
 #perfilImg {
     height: 240px;
+    border: 8px solid #FCC7C7;
+    border-radius: 50%;
 }
 
 #user {
@@ -86,7 +88,6 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: Inter;
 
 }
 
