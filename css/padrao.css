@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+} 
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url(../img/background.png); 
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.darkScreen{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goBackButton{
+    background-color: #E84040;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 50px;
+}
