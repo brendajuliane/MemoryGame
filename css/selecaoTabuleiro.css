@@ -1,3 +1,17 @@
+@font-face {
+    font-family: Inter;
+    src: url(../Inter/Inter-Regular.ttf);
+
+}
+@font-face {
+    font-family: "Inter Extra Bold";
+    src: url(../Inter/Inter-ExtraBold.ttf);
+
+}
+
+*{
+    font-family: Inter;
+}
 header {
     position: absolute;
     left: 10px;
@@ -11,7 +25,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Inter;
     font-size: 20px;
 }
 #localButton {
@@ -22,7 +36,7 @@ main {
     background-color: #fddf7c;
     border: 8px #FFAA5C solid;
     border-radius: 30px;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter Extra Bold";
     color: white;
     font-size: 40px;
     width: 180px;
