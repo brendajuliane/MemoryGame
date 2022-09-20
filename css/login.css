@@ -22,7 +22,7 @@ body {
     margin-right: auto;
     display: block;
     padding: 15px 0px 20px 0px;
-    width: 75%;
+    width: 68%;
 }
 
 .form {
@@ -49,7 +49,7 @@ body {
 }
 
 .textBox {
-    width: 262px;
+    width: 88%;
     height: 26px;
     border-width: 2px;
     color: gray;

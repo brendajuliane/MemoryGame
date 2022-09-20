@@ -43,7 +43,6 @@ header{
 
 .menu, .board {
     background-color: rgb(255, 241, 190, 0.5);
-    height: auto;
     border: 6px solid #FFA7A7;
     border-radius: 40px;
     overflow: hidden;
@@ -51,7 +50,7 @@ header{
     text-align: center;
     padding: 10px;
     height: 80vh;
-    min-height: 665px;
+    min-height: 600px;
     max-height: 1000px;
 }
 
@@ -100,22 +99,20 @@ header{
     justify-content: center;
     grid-template-columns: auto auto auto auto auto auto auto auto;
     aspect-ratio: 1 / 1;
-    min-width: 650px;
-    max-width: 1000px;
 }
 
 .gridItem {
     border: 5px solid #8D99FF;
     background-color: #686EFF;
     background-image: url(../img/star.svg);
-    background-size: 28px;
+    background-size: 40%;
     background-position: center;
     background-repeat: no-repeat;
     color: #605454;
     border-radius: 18px;
     margin: 2px;
     height: 8.5vh;
-    min-height: 68px;
+    min-height: 61px;
     max-height: 110px;
     aspect-ratio: 1 / 1;
     display: flex;
@@ -132,7 +129,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
+    min-height: 80px;
+    height: 12vh;
 }
 
 button {
