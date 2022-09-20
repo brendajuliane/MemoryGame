@@ -1,57 +1,32 @@
 *{
-    padding: 0;
-    margin: 0;
-    border: none;
     color:#FC5151;
     font-family: Arial, Helvetica, sans-serif;
 }
 body { 
-    background-image: url(../img/background.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 8%;
 }
 
 .form {
-    background-color: #F7F7F7; 
     width: 600px;
-    height: 400px;
-    border: #FFBFA4 solid 8px;
-    border-radius: 25px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    margin-right: 14px;
-    padding: 40px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
     padding-bottom: 0;
 }
 .inputs{
     display: flex;
 }
 
-.form.textBox::placeholder{
-    color: #7e7e7e;
-}
-
 .textBox {
-    height: auto;
+    width: 88%;
+    height: 26px;
     border-width: 2px;
     color: gray;
     padding: 10px;
     text-align: left;
     border-radius: 16px;
+    margin: 6px;
 }
-.textBox:focus {
-    outline: none;
-    box-shadow: 0 0 6px 0 #FFBFA4;
-}
+
 .name {
     background-image: url(../img/user-gray.png);
     background-position: 5px center;
@@ -129,24 +104,6 @@ body {
 }
 .date:focus{
     background-image: url(../img/calendar.png);
-}
-.button {
-    width: 10px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    text-align: center;
-    height: auto;
-    background-color: 	#00FF7F;
-    border-color: #3CB371;
-    border-radius: 20px;
-    color: #F7F7F7;
-    font-size: 12pt;
-    font-weight: 800;
-    padding: 18px 68px 18px 68px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: .3s;
 }
 
 .label {

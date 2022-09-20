@@ -70,7 +70,7 @@ body {
     box-shadow: 0 0 6px 0 #FFBFA4;
 }
 
-.YellowButton {
+.YellowButton, .greenButton {
     width: auto;
     background-color: #FFD74B;
     border: solid 5px #FFF0B9;
@@ -84,8 +84,19 @@ body {
     transition: .3s;
 }
 
+.greenButton {
+    background-color: #00FF7F;
+    border-color: #3CB371;
+}
+
 .YellowButton:hover {
     outline: none;
     background-color: #ffc800;
     border-color: #fde89a;
+}
+
+.greenButton:hover {
+    outline: none;
+    background-color: #08d970;
+    border-color: #36a065;
 }
