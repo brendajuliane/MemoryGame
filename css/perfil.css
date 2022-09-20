@@ -34,6 +34,7 @@ header {
 /*--------- main ---------*/
 
 main {
+    margin-top: 50px;
     background-color: white;
     border: 8px solid #FCC7C7;
     border-radius: 25px;
