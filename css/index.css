@@ -36,6 +36,7 @@ body {
 .gameModeButton {
     width: 300px;
     height: 90px;
+    text-decoration: none;
     background: #A4CCFC;
     border: 6px solid #A6AEFC; 
     border-radius: 50px;
@@ -43,6 +44,9 @@ body {
     color: white;
     font-size: 20px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .gameModeButton:hover {
     background: #8ebff9;
