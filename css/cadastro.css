@@ -1,4 +1,17 @@
 
+@font-face {
+    font-family: Inter;
+    src: url(../Inter/Inter-Regular.ttf);
+
+}
+@font-face {
+    font-family: "Inter Extra Bold";
+    src: url(../Inter/Inter-ExtraBold.ttf);
+
+}
+
+
+
 body { 
     display: flex;
     justify-content: center;
@@ -11,6 +24,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-self: center;
+    font-family: Inter;
 }
 
 .inputs{
@@ -117,4 +131,8 @@ p{
 }
 a{
     color : #fc5151;
+}
+.linkForm{
+    font-family: Inter;
+    font-size: 10pt;
 }

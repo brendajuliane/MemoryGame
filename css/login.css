@@ -1,6 +1,16 @@
+@font-face {
+    font-family: Inter;
+    src: url(../Inter/Inter-Regular.ttf);
+
+}
+@font-face {
+    font-family: "Inter Extra Bold";
+    src: url(../Inter/Inter-ExtraBold.ttf);
+
+}
 *{
     color:#FC5151;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter Extra Bold";
 }
 
 body {
@@ -20,6 +30,7 @@ body {
 
 .form {
     width: 300px;
+    font-family: Inter;
 }
 
 .form.textBox::placeholder{
@@ -50,6 +61,7 @@ body {
     background-repeat: no-repeat;
     padding-left: 27px;
     transition: .5s;
+    
 }
 
 .user:focus {
@@ -67,4 +79,9 @@ body {
 
 .password:focus {
     background-image: url(../img/padlock.png);
+}
+
+.linkForm{
+    font-family: Inter;
+    font-size: 10pt;
 }
