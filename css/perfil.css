@@ -132,6 +132,7 @@ main {
 
 /*-------- Footer/button -------- */
 .editarButton {
+    text-decoration: none;
     background-color: #F7DB95;
     border: 4px #F7DB95 solid;
     border-radius: 30px;
@@ -145,6 +146,7 @@ main {
     right: 20px;
     bottom: 20px;
     cursor: pointer;
+    text-align: center;
 }
 
 .editarButton:hover {
