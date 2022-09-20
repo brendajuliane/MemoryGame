@@ -37,3 +37,52 @@ body {
     margin: 10px;
     border-radius: 50px;
 }
+
+.form {
+    background-color: #F7F7F7;
+    border: #FFBFA4 solid 8px;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.form.textBox::placeholder{
+    color: #7e7e7e;
+}
+
+.textBox {
+    width: 88%;
+    height: 26px;
+    border-width: 2px;
+    color: gray;
+    padding: 10px;
+    text-align: left;
+    border-radius: 16px;
+}
+
+.textBox:focus {
+    outline: none;
+    box-shadow: 0 0 6px 0 #FFBFA4;
+}
+
+.YellowButton {
+    width: auto;
+    background-color: #FFD74B;
+    border: solid 5px #FFF0B9;
+    border-radius: 20px;
+    color: #F7F7F7;
+    font-size: 12pt;
+    font-weight: 800;
+    padding: 18px 68px 18px 68px;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.YellowButton:hover {
+    outline: none;
+    background-color: #ffc800;
+    border-color: #fde89a;
+}

@@ -3,45 +3,26 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body { 
-    background-image: url(../img/background.png);
     display: flex;
     justify-content: center;
-    padding-top: 6%;
 }
 
 .form {
-    background-color: #F7F7F7; 
     width: 600px;
-    border: #FFBFA4 solid 8px;
-    border-radius: 25px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    margin-right: 14px;
-    padding: 40px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: center;
 }
+
 .inputs{
     display: flex;
 }
 
-.form.textBox::placeholder{
-    color: #7e7e7e
-}
-
 .textBox {
-    border-width: 2px;
-    padding: 10px;
-    text-align: left;
+    margin: 6px;
+}
 
-}
-.textBox:focus {
-    outline: none;
-    box-shadow: 0 0 6px 0 #FFBFA4;
-}
 .name {
     background-image: url(../img/user-gray.png);
     background-position: 5px center;
@@ -120,18 +101,8 @@ body {
 .date:focus{
     background-image: url(../img/calendar.png);
 }
-form button {
-    width: auto;
-    border: #FFBFA4 solid 8px;
-    border-radius: 25px;
-    background-color: #FFD74B;
-    border-color: #FFF0B9;
-    color: #F7F7F7;
-    font-size: 12pt;
-    font-weight: 800;
-    padding: 18px 68px 18px 68px;
-    cursor: pointer;
-    transition: .3s;
+.YellowButton {
+    margin-top: 60px;
 }
 
 .label {
