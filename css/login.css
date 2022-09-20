@@ -1,16 +1,9 @@
 *{
-    padding: 0;
-    margin: 0;
-    border: none;
     color:#FC5151;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-image: url(../img/background.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,15 +19,7 @@ body {
 }
 
 .form {
-    background-color: #F7F7F7; 
     width: 300px;
-    height: auto;
-    border: #FFBFA4 solid 8px;
-    border-radius: 25px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    padding: 40px;
-    text-align: center;
 }
 
 .form.textBox::placeholder{
@@ -56,11 +41,6 @@ body {
     padding: 10px;
     text-align: left;
     border-radius: 16px;
-}
-
-.textBox:focus {
-    outline: none;
-    box-shadow: 0 0 6px 0 #FFBFA4;
 }
 
 .user {
@@ -87,24 +67,4 @@ body {
 
 .password:focus {
     background-image: url(../img/padlock.png);
-}
-
-.button {
-    width: auto;
-    background-color: #FFD74B;
-    border-color: #FFF0B9;
-    border-radius: 20px;
-    color: #F7F7F7;
-    font-size: 12pt;
-    font-weight: 800;
-    padding: 18px 68px 18px 68px;
-    margin-top: 40px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.button:hover {
-    outline: none;
-    background-color: #ffc800;
-    border-color: #fde89a;
 }
