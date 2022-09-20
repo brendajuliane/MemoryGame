@@ -6,10 +6,12 @@
     vertical-align: baseline;
     list-style: none;
     font-family: 'Inter', sans-serif;
-}
+} 
+
 html {
     height: 100%;
 }
+
 body {
     background-image: url(../img/background.png); 
     background-repeat: repeat;
@@ -18,10 +20,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column ;
 }
+
+/*--------- header/button ---------*/
+header {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+} 
+
 main {
     background-color: white;
-    border: 8px solid #FF6161;
+    border: 8px solid #FCC7C7;
     border-radius: 25px;
     padding: 25px;
     color: #605454;
@@ -40,11 +51,29 @@ main {
     height: 200px;
 }
 
+#perfilImgDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:  50%;
+    background-color: #CBCBCB;
+    margin-top: -60px;
+    /* overflow: hidden; */
+}
+
+#perfilImg {
+    height: 240px;
+}
+
+#user {
+    font-weight: 500;
+}
+
 .informationBox {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 50px;
 }
 
 .title {
@@ -80,19 +109,45 @@ main {
     display: flex;
     gap: 15px;
 }
+
 .numberInformation {
     padding: 10px;
     font-size: 11pt;
     width: 140px;
     height: 90px;
 }
+
 .number, .numberDefeat, .numberWin {
     font-size: 45px;
     font-weight: bold;
 }
+
 .numberDefeat, .informationDefeat {
     color: #D02060;
 }
+
 .numberWin, .informationWin {
     color: #20D047;
+}
+
+/*-------- Footer/button -------- */
+.editarButton {
+    background-color: #F7DB95;
+    border: 4px #F7DB95 solid;
+    border-radius: 30px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 15px;
+    margin-top: 20px; 
+    width: 70px;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.editarButton:hover {
+    background-color: #f9d579;
+    border: 4px #f9d579 solid;
 }

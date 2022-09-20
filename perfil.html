@@ -8,11 +8,17 @@
     <title>Perfil</title>
 </head>
 <body>
+    <header>
+        <a href="index.html" class="goBackButton"><img src="img/goBackButton.png" alt="Icone para voltar à pagina anterior"></a>
+    </header>
     <main>
         <div class="informationBox">
             <div class="userBox">
+                <div id="perfilImgDiv">
+                    <img src="img/perfilImg.png" alt="" id="perfilImg">
+                </div>
                 <h1>Name Lastname</h1>
-                <h2>User</h2>
+                <h2 id="user">User</h2>
             </div>
             <div class="subInformationalBox">
                 <h2 class="title">Dados cadastrais</h2>
@@ -45,5 +51,8 @@
             </div>
         </div>
     </main>
+    <footer>
+        <a href="alterarDados.html"><button class="editarButton">Editar</button></a>
+    </footer>
 </body>
 </html>
