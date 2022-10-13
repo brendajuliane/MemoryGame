@@ -107,24 +107,19 @@ header{
     border: 5px solid #8D99FF;
     background-color: #686EFF;
     background-image: url(../img/star.svg);
-    background-size: 80%;
+    background-size: 0%, 40%;
     background-position: center;
     background-repeat: no-repeat;
     color: #605454;
     border-radius: 18px;
     margin: 2px;
-    height: 8.5vh;
-    min-height: 61px;
     max-height: 110px;
     aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-}
-
-.gridItem:active {
-    background-image: none !important;
+    transition: background-size 0.18s;
 }
 
 .divButton {
