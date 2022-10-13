@@ -9,6 +9,10 @@
 
     <script type="text/javascript">
 
+        function getSize() {
+            return localStorage.getItem("boardSize");
+        }
+
         function setCardImages(size) {
 
             let sortedNums = new Map();
@@ -41,7 +45,7 @@
 
         function loadBoard() {
 
-            size = window.location.href.slice(-1);
+            size = getSize();
 
             document.getElementById("boardSize").innerHTML = size + "&times;" + size;
 
@@ -60,7 +64,7 @@
 
         // unfinished
         function toggleVisibility() {
-            size = window.location.href.slice(-1);
+            size = getSize();
 
             let backgroundSize;
 
@@ -89,7 +93,7 @@
             <div>
                 <img src="img/textoLogo.png" alt="Jogo da memória" id="imgLogo">
             </div>
-            <div class="timer" id="t">
+            <div class="timer">
                 <p>00:00</p>
                 <p class="itemLabel">Clássico</p>
             </div>

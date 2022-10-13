@@ -32,7 +32,7 @@ main {
     display: flex;
     gap: 15px;
 }
-.button {
+button {
     background-color: #fddf7c;
     border: 8px #FFAA5C solid;
     border-radius: 30px;
@@ -42,12 +42,8 @@ main {
     width: 180px;
     height: 180px; 
     margin-top: 20px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-.button:hover {
+button:hover {
     cursor: pointer;
     background-color: #C2B2FF;
     border-color: #B982FF;
