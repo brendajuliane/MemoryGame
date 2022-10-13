@@ -100,7 +100,6 @@ header{
     display: grid;
     align-content: center;
     justify-content: center;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
     aspect-ratio: 1 / 1;
 }
 
@@ -108,7 +107,7 @@ header{
     border: 5px solid #8D99FF;
     background-color: #686EFF;
     background-image: url(../img/star.svg);
-    background-size: 40%;
+    background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
     color: #605454;
@@ -125,7 +124,7 @@ header{
 }
 
 .gridItem:active {
-    background-image: none;
+    background-image: none !important;
 }
 
 .divButton {

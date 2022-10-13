@@ -6,8 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/jogo.css">
     <title>Jogo da Memória | Partida</title>
+
+    <script type="text/javascript">
+
+        function setCardImages(size) {
+
+            let sortedNums = new Map();
+            let randomImg;
+
+            for (let i = 0; i < size * size; i++) {
+                randomImg = Math.floor((Math.random() * 32) + 1);
+
+                /* If there are less than half of single cards added and this one hasn't been added yet, then
+                 * insert it into the map with value '1' */
+                if (sortedNums.size < size * size / 2 && !sortedNums.has(randomImg)) {
+                    document.getElementById("g" + i).style.backgroundImage = "url(img/cards/c" + randomImg + ".png)";
+                    sortedNums.set(randomImg, 1);
+                }
+                // If there is only one matching card, then insert it into the map with value '2' 
+                else if (sortedNums.get(randomImg) == 1) {
+                    document.getElementById("g" + i).style.backgroundImage = "url(img/cards/c" + randomImg + ".png)";
+                    sortedNums.set(randomImg, 2);
+                }
+                /* If there are already 2 matching cards or half of the cards have been added and this is not 
+                 * one of them, then randomize a new card to this grid item (i) */
+                else
+                    i--;
+
+            }
+
+        }
+
+        function loadBoard() {
+
+            size = window.location.href.slice(-1);
+
+            document.getElementById("boardSize").innerHTML = size + "&times;" + size;
+
+            document.querySelector(".board").style.gridTemplateColumns = "repeat(" + size + ", auto)";
+            
+            for (let i = 0; i < size * size; i++) {
+                let gridItem = document.createElement('div');
+                gridItem.className = "gridItem";
+                gridItem.id = "g" + i;
+                document.querySelector(".board").appendChild(gridItem);
+            }
+
+            setCardImages(size);
+        }
+    </script>
+
 </head>
-<body>
+<body onload="loadBoard()">
     <header>
         <a href="index.html" class="goBackButton"><img src="img/close.png" alt=""></a>
     </header>
@@ -17,13 +67,13 @@
             <div>
                 <img src="img/textoLogo.png" alt="Jogo da memória" id="imgLogo">
             </div>
-            <div class="timer">
+            <div class="timer" id="t">
                 <p>00:00</p>
                 <p class="itemLabel">Clássico</p>
             </div>
             <div class="menuItem">
                 <p class="itemLabel">Tabuleiro:</p>
-                <p>8x8</p>
+                <p id="boardSize"></p>
             </div>
             <div class="menuItem">
                 <p class="itemLabel">Jogadas:</p>
@@ -34,70 +84,7 @@
             </div>
         </div>
         <div class="board">
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
-            <div class="gridItem"></div>
+            
         </div>
     </div>
 </body>
