@@ -9,9 +9,7 @@
 
     <script type="text/javascript">
 
-        function getSize() {
-            return localStorage.getItem("boardSize");
-        }
+        const size = localStorage.getItem("boardSize");
 
         function setCardImages(size) {
 
@@ -45,8 +43,6 @@
 
         function loadBoard() {
 
-            size = getSize();
-
             document.getElementById("boardSize").innerHTML = size + "&times;" + size;
 
             document.querySelector(".board").style.gridTemplateColumns = "repeat(" + size + ", auto)";
@@ -64,7 +60,6 @@
 
         // unfinished
         function toggleVisibility() {
-            size = getSize();
 
             let backgroundSize;
 
