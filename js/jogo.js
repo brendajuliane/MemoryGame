@@ -41,6 +41,8 @@ function loadBoard() {
         gridItem.className = "gridItem";
         gridItem.id = "g" + i;
         gridItem.style.height = (68 / size) + "vh";
+                                       // {Substitua o nome da função aqui} :)
+        gridItem.onclick = function(){ toggleVisibility() };
         document.querySelector(".board").appendChild(gridItem);
     }
 
