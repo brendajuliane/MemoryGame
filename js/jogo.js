@@ -91,6 +91,9 @@ function move(id) {
         if(hit()) {
             console.log("Acertou!");
             //animaçãozinha de acerto :)
+            if(checkVictory()) {
+                //dispara modal de vitória
+            }
         } else {
             console.log("Errou");
             setTimeout(() => {turnCardsOver()}, 600);
@@ -108,14 +111,24 @@ function hit() {
 }
 
 function turnCardsOver() {
-    for (i = 1; i >= 0; i--) {
+    for (let i = 1; i >= 0; i--) {
         document.getElementById(selectedCardsID[i]).style.backgroundSize = "0%, 40%";
         document.getElementById(selectedCardsID[i]).value = 0;
     }
 }
 
 function deselectCards() {
-    for(i=1; i>=0; i--) {
+    for(let i=1; i>=0; i--) {
         selectedCardsID.pop();
     } 
+}
+
+function checkVictory() {
+        for (let i = 0; i < size * size; i++) {
+            if(document.getElementById("g" + i).value != 1) {
+                console.log(`entrou no g${i}`);
+                return false;
+            }
+        }
+        return true;      
 }
