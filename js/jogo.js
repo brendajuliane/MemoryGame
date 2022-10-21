@@ -1,3 +1,5 @@
+// BOARD GENERATION
+
 const size = localStorage.getItem("boardSize");
 
 function setCardImages(size) {
@@ -25,7 +27,6 @@ function setCardImages(size) {
          * one of them, then randomize a new card to this grid item (i) */
         else
             i--;
-
     }
 
 }
@@ -33,6 +34,7 @@ function setCardImages(size) {
 function loadBoard() {
 
     document.getElementById("boardSize").innerHTML = size + "&times;" + size;
+    document.getElementById("movements").innerText = "0";
 
     document.querySelector(".board").style.gridTemplateColumns = "repeat(" + size + ", auto)";
 
@@ -41,8 +43,7 @@ function loadBoard() {
         gridItem.className = "gridItem";
         gridItem.id = "g" + i;
         gridItem.style.height = (68 / size) + "vh";
-                                       // {Substitua o nome da função aqui} :)
-        gridItem.onclick = function(){ toggleVisibility() };
+        gridItem.onclick = function(){ move(this.id) };
         document.querySelector(".board").appendChild(gridItem);
     }
 
@@ -64,5 +65,52 @@ function toggleVisibility() {
     }
 
     for (let i = 0; i < size * size; i++)
-        document.getElementById("g" + i).style.backgroundSize = backgroundSize;
+        if(document.getElementById("g" + i).value != 1)
+            document.getElementById("g" + i).style.backgroundSize = backgroundSize;
+}
+
+// GAME
+let turn = 0;
+let selectionedCards = new Array();
+let selectionedCardsID = new Array();
+
+function move(id) {
+    movements = document.getElementById("movements").innerText;
+    card = document.getElementById(id);
+
+    if(card.value == 1)
+        return
+    
+    card.style.backgroundSize = "80%, 0%";
+    card.value = 1;
+    selectionedCards.push(card.style.backgroundImage);
+    selectionedCardsID.push(id);
+
+    if(turn == 1) {
+        document.getElementById("movements").innerText = (Number(movements) + 1).toString();
+        turn = 0;
+        
+        if(selectionedCards[0] == selectionedCards[1]) {
+            console.log("Acertou!");
+        } else {
+            setTimeout(() => {turnCardsOver()}, 600);
+        }
+        setTimeout(() => {deselectCards()}, 601);
+    } else {
+        turn++;
+    }
+}
+
+function turnCardsOver() {
+    for (i = 1; i >= 0; i--) {
+        document.getElementById(selectionedCardsID[i]).style.backgroundSize = "0%, 40%";
+        document.getElementById(selectionedCardsID[i]).value = 0;
+    }
+}
+
+function deselectCards() {
+    for(i=1; i>=0; i--) {
+        selectionedCardsID.pop();
+        selectionedCards.pop();
+    } 
 }
