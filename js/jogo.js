@@ -71,7 +71,7 @@ function toggleVisibility() {
 
 // GAME
 let turn = 0;
-let selectionedCardsID = new Array();
+let selectedCardsID = new Array();
 
 function move(id) {
     movements = document.getElementById("movements").innerText;
@@ -82,7 +82,7 @@ function move(id) {
     
     card.style.backgroundSize = "80%, 0%";
     card.value = 1;
-    selectionedCardsID.push(id);
+    selectedCardsID.push(id);
 
     if(turn == 1) {
         document.getElementById("movements").innerText = (Number(movements) + 1).toString();
@@ -90,7 +90,7 @@ function move(id) {
         
         if(hit()) {
             console.log("Acertou!");
-            //colocar animaçãozinha na hora que acertar (confia que é necessário, dps explico)
+            //animaçãozinha de acerto :)
         } else {
             console.log("Errou");
             setTimeout(() => {turnCardsOver()}, 600);
@@ -103,19 +103,19 @@ function move(id) {
 }
 
 function hit() {
-    return document.getElementById(selectionedCardsID[0]).style.backgroundImage == 
-           document.getElementById(selectionedCardsID[1]).style.backgroundImage;
+    return document.getElementById(selectedCardsID[0]).style.backgroundImage == 
+           document.getElementById(selectedCardsID[1]).style.backgroundImage;
 }
 
 function turnCardsOver() {
     for (i = 1; i >= 0; i--) {
-        document.getElementById(selectionedCardsID[i]).style.backgroundSize = "0%, 40%";
-        document.getElementById(selectionedCardsID[i]).value = 0;
+        document.getElementById(selectedCardsID[i]).style.backgroundSize = "0%, 40%";
+        document.getElementById(selectedCardsID[i]).value = 0;
     }
 }
 
 function deselectCards() {
     for(i=1; i>=0; i--) {
-        selectionedCardsID.pop();
+        selectedCardsID.pop();
     } 
 }
