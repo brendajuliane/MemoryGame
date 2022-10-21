@@ -71,7 +71,6 @@ function toggleVisibility() {
 
 // GAME
 let turn = 0;
-let selectionedCards = new Array();
 let selectionedCardsID = new Array();
 
 function move(id) {
@@ -79,26 +78,33 @@ function move(id) {
     card = document.getElementById(id);
 
     if(card.value == 1)
-        return
+        return;
     
     card.style.backgroundSize = "80%, 0%";
     card.value = 1;
-    selectionedCards.push(card.style.backgroundImage);
     selectionedCardsID.push(id);
 
     if(turn == 1) {
         document.getElementById("movements").innerText = (Number(movements) + 1).toString();
         turn = 0;
         
-        if(selectionedCards[0] == selectionedCards[1]) {
+        if(hit()) {
             console.log("Acertou!");
+            //colocar animaçãozinha na hora que acertar (confia que é necessário, dps explico)
         } else {
+            console.log("Errou");
             setTimeout(() => {turnCardsOver()}, 600);
         }
+        
         setTimeout(() => {deselectCards()}, 601);
     } else {
         turn++;
     }
+}
+
+function hit() {
+    return document.getElementById(selectionedCardsID[0]).style.backgroundImage == 
+           document.getElementById(selectionedCardsID[1]).style.backgroundImage;
 }
 
 function turnCardsOver() {
@@ -111,6 +117,5 @@ function turnCardsOver() {
 function deselectCards() {
     for(i=1; i>=0; i--) {
         selectionedCardsID.pop();
-        selectionedCards.pop();
     } 
 }
