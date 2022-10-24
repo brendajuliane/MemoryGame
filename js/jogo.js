@@ -72,16 +72,21 @@ function toggleVisibility() {
 // GAME
 let turn = 0;
 let selectedCardsID = new Array();
+const cardStatus = {
+    close: 0,
+    open: 1,
+    block: 3
+}
 
 function move(id) {
     movements = document.getElementById("movements").innerText;
     card = document.getElementById(id);
 
-    if(card.value == 1)
+    if(card.value == cardStatus.open || card.value == cardStatus.block)
         return;
     
     card.style.backgroundSize = "80%, 0%";
-    card.value = 1;
+    card.value = cardStatus.open;
     selectedCardsID.push(id);
 
     if(turn == 1) {
@@ -89,17 +94,16 @@ function move(id) {
         turn = 0;
         
         if(hit()) {
-            console.log("Acertou!");
-            //animaçãozinha de acerto :)
             if(checkVictory()) {
+                //parar timer
                 //dispara modal de vitória
             }
+            deselectCards();
         } else {
-            console.log("Errou");
-            setTimeout(() => {turnCardsOver()}, 600);
+            blockTabuleiro();
+            setTimeout(() => {turnCardsOver(unblockTabuleiro)}, 600);
         }
-        
-        setTimeout(() => {deselectCards()}, 601);
+
     } else {
         turn++;
     }
@@ -110,11 +114,13 @@ function hit() {
            document.getElementById(selectedCardsID[1]).style.backgroundImage;
 }
 
-function turnCardsOver() {
+function turnCardsOver(callback) {
     for (let i = 1; i >= 0; i--) {
         document.getElementById(selectedCardsID[i]).style.backgroundSize = "0%, 40%";
-        document.getElementById(selectedCardsID[i]).value = 0;
+        document.getElementById(selectedCardsID[i]).value = cardStatus.close;
     }
+    deselectCards();
+    callback();
 }
 
 function deselectCards() {
@@ -125,10 +131,26 @@ function deselectCards() {
 
 function checkVictory() {
         for (let i = 0; i < size * size; i++) {
-            if(document.getElementById("g" + i).value != 1) {
+            if(document.getElementById("g" + i).value != cardStatus.open) {
                 console.log(`entrou no g${i}`);
                 return false;
             }
         }
         return true;      
+}
+
+function blockTabuleiro() {
+    for (let i = 0; i < size * size; i++) {
+        if(document.getElementById("g" + i).value != cardStatus.open) {
+            document.getElementById("g" + i).value = cardStatus.block;
+        }
+    }
+}
+
+function unblockTabuleiro() {
+    for (let i = 0; i < size * size; i++) {
+        if(document.getElementById("g" + i).value == cardStatus.block) {
+            document.getElementById("g" + i).value = cardStatus.close;
+        }
+    }
 }
