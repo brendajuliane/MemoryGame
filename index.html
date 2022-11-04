@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/gameTimer.js"></script>
     <title>Jogo da memória</title>
 </head>
-<body>
+<body onload="getElementsIndex()">
     <div class="main">
         <img src="img/textoLogo.png" alt="Jogo da memória" id="imgLogo">
-        <a href="selecaoTabuleiro.html" class="gameModeButton">Clássica</a>
-        <a href="selecaoTabuleiro.html" class="gameModeButton">Contra o tempo</a>
+        <a href="selecaoTabuleiro.html" class="gameModeButton" id="classicModeBtn">Clássica</a>
+        <a href="selecaoTabuleiro.html" class="gameModeButton" id="aTimeModeBtn">Contra o tempo</a>
     </div>
     <div id="section">
         <header>
@@ -20,7 +21,7 @@
             <a href="modalSairApp.html"><img src="img/scapeButton.png" class="icon" alt="Icone para deslogar"></a> 
         </header>
         <footer>
-            <a href="ranking.html"><img src="img/rankingButton.png" class="icon" alt="Icone para acessar o hanking"></a>
+            <a href="ranking.html"><img src="img/rankingButton.png" class="icon" alt="Icone para acessar o ranking"></a>
         </footer>
     </div>
 </body>

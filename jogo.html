@@ -8,9 +8,10 @@
     <title>Jogo da Memória | Partida</title>
 
     <script type="text/javascript" src="js/jogo.js"></script>
+    <script src="js/gameTimer.js"></script>
 
 </head>
-<body onload="loadBoard()">
+<body onload="loadBoard(); getElementsJogo();">
     <header>
         <a href="index.html" class="goBackButton"><img src="img/close.png" alt=""></a>
     </header>
@@ -22,7 +23,7 @@
             </div>
             <div class="timer">
                 <p>00:00</p>
-                <p class="itemLabel">Clássico</p>
+                <p class="itemLabel" id="gameModeLabel">Clássico</p>
             </div>
             <div class="menuItem">
                 <p class="itemLabel">Tabuleiro:</p>
