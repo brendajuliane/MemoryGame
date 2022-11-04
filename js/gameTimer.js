@@ -53,7 +53,7 @@ function timerCount(){
         timeSec++;
         //DECIDIR CRITÉRIO DE PARADA DO CONTADOR=========================================================================================
         if(timeSec==100000000){
-            clearInterval(countDownTimer);
+            clearInterval(setIntervalVar);
         }
     }
 }
@@ -83,7 +83,7 @@ function countDown(){
         contText.innerText=`${formatZero(min)}:${formatZero(sec)}`;
         timeSec--;
         if(timeSec==0){
-            clearInterval(countDownTimer);
+            clearInterval(setIntervalVar);
             //CHAMAR TELA DE VITÓRIA==========================================================================================
         }
     }
