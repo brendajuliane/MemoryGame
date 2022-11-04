@@ -43,7 +43,7 @@ function loadBoard() {
         gridItem.className = "gridItem";
         gridItem.id = "g" + i;
         gridItem.style.height = (68 / size) + "vh";
-        gridItem.onclick = function(){ move(this.id) };
+        gridItem.onclick = function(){ move(this.id); startTimerOnFirstClick();};
         document.querySelector(".board").appendChild(gridItem);
     }
 
