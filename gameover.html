@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="css/gameover.css">
     <title>GAMEOVER</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <script src="js/gameTimer.js"></script>
 </head>
-<body>
+<body onload="getElementsGameOver()">
     <main>
-        <h3>DERROTA</h3>
-        <p>Deseja jogar novamente?</p>
+        <h1 id="gameResultLabel"></h1>
+        <p id="againMsg">Deseja jogar novamente?</p>
         <div>
-            <button class="button" id="simButton">Sim</button>
-            <button class="button">Não</button>
+            <a href="jogo.html" class="button" id="simButton">Sim</a>
+            <a href="index.html" class="button">Não</a>
         </div>
     </main>
 </body>

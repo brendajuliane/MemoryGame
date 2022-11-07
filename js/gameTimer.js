@@ -2,12 +2,17 @@ const gameMode = localStorage.getItem("gameMode");
 let firstClick = true;
 let timeSec=0;
 let setIntervalVar;
+let result = localStorage.getItem("result");
 //index.html vars
 let classicModeBtn;
 let aTimeModeBtn;
 //jogo.html vars
 let gameModeLabel;
 let contText;
+//gameover.html vars
+let main;
+let gameResultLabel;
+let againMsg;
 
 //function call change based on gamemode
 if(gameMode=="Clássico")
@@ -33,6 +38,13 @@ function getElementsJogo(){
 
 }
 
+function getElementsGameOver(){
+    main = document.querySelector("main");
+    gameResultLabel = document.querySelector("#gameResultLabel");
+    againMsg = document.querySelector("#againMsg");
+    changeFinishedPage();
+}
+
 //change game mode label on game 
 function changeLabel(){
     if(gameMode==1){
@@ -51,8 +63,7 @@ function timerCount(){
         let sec= timeSec%60;
         contText.innerText=`${formatZero(min)}:${formatZero(sec)}`;
         timeSec++;
-        //DECIDIR CRITÉRIO DE PARADA DO CONTADOR=========================================================================================
-        if(timeSec==100000000){
+        if(result==true){
             clearInterval(setIntervalVar);
         }
     }
@@ -82,9 +93,9 @@ function countDown(){
         let sec= timeSec%60;
         contText.innerText=`${formatZero(min)}:${formatZero(sec)}`;
         timeSec--;
-        if(timeSec==0){
+        if(timeSec==-1){
             clearInterval(setIntervalVar);
-            //CHAMAR TELA DE VITÓRIA==========================================================================================
+            callFinishedPage(false);
         }
     }
 }
@@ -102,3 +113,27 @@ function formatZero(num){
     }
 
  }
+
+
+ //Calls gameover/win page and change css
+function callFinishedPage(gameResult){
+    result=localStorage.setItem("result", gameResult);
+    window.location.replace("gameover.html");
+}
+
+function changeFinishedPage(){
+    console.log("result é:" + result);
+    if(result=="true"){
+        main.style.borderColor="#ad62cb";
+        gameResultLabel.innerText="VITÓRIA";
+        gameResultLabel.style.color="#ad62cb";
+        againMsg.innerText="Parabéns! Gostaria de jogar novamente?";
+    }
+    if(result=="false"){
+        main.style.borderColor="#FF6161";
+        gameResultLabel.innerText="TEMPO ESGOTADO";
+        gameResultLabel.style.color="#FF6161";
+        againMsg.innerText="Gostaria de tentar novamente?";
+    }
+    main.style.display="flex";
+}

@@ -95,8 +95,7 @@ function move(id) {
         
         if(hit()) {
             if(checkVictory()) {
-                //parar timer
-                //dispara modal de vitória
+                callFinishedPage(true);
             }
             deselectCards();
         } else {
