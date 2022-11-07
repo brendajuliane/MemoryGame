@@ -50,7 +50,6 @@ function loadBoard() {
     setCardImages(size);
 }
 
-// unfinished
 function toggleVisibility() {
 
     let backgroundSize;
