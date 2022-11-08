@@ -18,7 +18,7 @@ body {
 }
 
 .form {
-    height: 70%;
+    height: 45%;
     width: 600px;
     display: flex;
     flex-direction: column;
@@ -131,6 +131,9 @@ p{
 }
 a{
     color : #fc5151;
+}
+a:hover{
+    color: seagreen;
 }
 .linkForm{
     font-family: Inter;

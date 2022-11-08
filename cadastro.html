@@ -6,33 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/padrao.css">
     <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
     <title>Cadastro</title>
 </head>
 <body>
     <div class="form">
         <p class="label">Cadastre-se</p>
-        <form action="index.html" method="POST">
+        <form id="meuForm" action="index.html" method="get">
             <div class="inputs">
-            <input type="text" class="form textBox name" placeholder="Nome Completo" name="name" required>
-            <input type="text" class="form textBox cellphone" placeholder="Celular" name="cellphone" required>
+            <input type="text" class="form textBox name" placeholder="Nome Completo" id="name" name="name" >
+            <input type="text" class="form textBox cellphone" placeholder="Celular" id="cellphone" name="cellphone" >
             </div>
             <div class="inputs">
-            <input type="text" class="form textBox user" placeholder="Usuário" name="user" required>
-            <input type="text" class="form textBox cpf" placeholder="CPF" name="cpf" pattern="[0-9]+" title="please enter number only" required>
+            <input type="text" class="form textBox user" placeholder="Usuário" id="user" name="user" >
+            <input type="text" class="form textBox cpf" placeholder="CPF" id="cpf" name="cpf" >
             </div>
             <div class="inputs">
-            <input type="password" class="form textBox password" placeholder="Senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-            title="Senha deve ter no mínimo um número, uma letra minúscula, uma letra maiúscula e 8 caracteres" name="password" required>
-            <input type="password" class="form textBox password" placeholder="Confirmar Senha" name="validpassword" required>
+            <input type="text" class="form textBox password" placeholder="Senha" title="Senha deve ter no mínimo um número, uma letra minúscula, uma letra maiúscula e 8 caracteres"
+             id="password" name="password" >
+            <input type="text" class="form textBox password" placeholder="Confirmar Senha" id="validpassword" name="validpassword" >
             </div>
             <div class="inputs">
-            <input type="text" class="form textBox date" placeholder="Data de Nascimento" title="DD/MM/YY" name="date" required>
-            <input type="email" class="form textBox email" placeholder="E-mail" name="email" required>
+            <input type="text" class="form textBox date" placeholder="Data de Nascimento" title="DD/MM/YY" id="date" name="date" >
+            <input type="text" class="form textBox email" placeholder="E-mail" id="email" name="email" >
             </div>     
             <button class="YellowButton" >Cadastrar</button>
         </form>
             <a href="login.html" class="linkForm">Já possui uma conta? Faça Login!</a>  
     </div>
+    <script defer src="js/validacaoForm.js"></script>
+    <script>
+        var forms = document.querySelector('#meuForm')
+        forms.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            var cont = 0;
+
+            if(validaNome(nome)){
+                cont += 1
+            }
+            if(validaCelular(celular)){
+                cont += 1
+            }
+            if(validaUsuario(user)){
+                cont += 1
+            }
+            if(validaCPF(cpf)){
+                cont += 1
+            }
+            if(validaSenha(senha)){
+                cont += 1
+            }
+            if(validaSenha2(senha2)){
+                cont += 1
+            }
+            if(validaData(data)){
+                cont += 1
+            }
+            if(validaEmail(email)){
+                cont += 1
+            }
+            if(cont == 8){
+                alert("Cadastro realizado com sucesso")
+                e.currentTarget.submit()
+            }
+    });
+    </script>
 </body>
 </html>
