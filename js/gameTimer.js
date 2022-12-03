@@ -173,6 +173,9 @@ function sendData(gameResult) {
 
     let time = document.getElementById("contText").innerHTML;
 
+    if ((time.split(":").length - 1) <= 1)
+        time = "0:" + time;
+
     let moves = document.getElementById("movements").innerHTML;
 
     // Alterar depois quando tiver sessões de usuário

@@ -26,7 +26,7 @@
                         DEFAULT,
                         ". $_POST['mode'] .",
                         '". $_POST['boardSize'] ."', 
-                        '0:". $_POST['time'] ."', 
+                        '". $_POST['time'] ."', 
                         ". $_POST['result'] .",
                         DEFAULT,
                         ". $_POST['moves'] .",
