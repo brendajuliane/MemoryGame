@@ -1,5 +1,15 @@
 <?php
-$sname = "localhost:3307";
+$sname = "localhost";
 $uname = "root";
 $pwd = "";
+
+try{
+    $conn = new PDO("mysql:host=$sname;dbname=jogomemoria", $uname, $pwd);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+}
+catch(PDOException $e){
+    echo "Connection failed: " . $e->getMessage();
+}
+
 ?>
