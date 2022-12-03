@@ -6,7 +6,7 @@ let result = localStorage.getItem("result");
 //index.html vars
 let classicModeBtn;
 let aTimeModeBtn;
-//jogo.html vars
+//jogo.php vars
 let gameModeLabel;
 let contText;
 //gameover.html vars
@@ -117,7 +117,8 @@ function formatZero(num){
 
  //Calls gameover/win page and change css
 function callFinishedPage(gameResult){
-    result=localStorage.setItem("result", gameResult);
+    result = localStorage.setItem("result", gameResult);
+    sendData(gameResult);
     window.location.replace("gameover.html");
 }
 
@@ -136,4 +137,47 @@ function changeFinishedPage(){
         againMsg.innerText="Gostaria de tentar novamente?";
     }
     main.style.display="flex";
+}
+
+let finished = false;
+
+window.onbeforeunload = function () {
+    if (!finished && !firstClick)
+        sendData(false);
+
+    return null;
+};
+
+function sendData(gameResult) {
+    finished = true;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'jogo.php', true);
+    xhr.onload = function () {
+        console.log(this.responseText);
+    }
+
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    let result = 0;
+
+    if (gameResult)
+        result = 1;
+
+    let mode = 0;
+
+    if (document.getElementById("gameModeLabel").innerHTML != "Clássico")
+        mode = 1;
+
+    let boardSize = document.getElementById("boardSize").innerHTML.replace(/×/g, "x");
+
+    let time = document.getElementById("contText").innerHTML;
+
+    let moves = document.getElementById("movements").innerHTML;
+
+    // Alterar depois quando tiver sessões de usuário
+    let username = "emanu55";
+
+    xhr.send('result=' + result + '&mode=' + mode + '&boardSize=' + boardSize
+        + '&time=' + time + '&moves=' + moves + '&username=' + username);
 }

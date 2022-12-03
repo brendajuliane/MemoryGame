@@ -11,6 +11,36 @@
     <script type="text/javascript" src="js/jogo.js"></script>
     <script src="js/gameTimer.js"></script>
 
+    <?php
+        if(array_key_exists('result', $_POST))
+            ins_hist();
+
+        function ins_hist(){
+            include('db_infos.php');
+
+            try {
+                $conn = new PDO("mysql:host=$sname;dbname=jogomemoria", $uname, $pwd);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $sql = "INSERT INTO partida VALUES ( 
+                        DEFAULT,
+                        ". $_POST['mode'] .",
+                        '". $_POST['boardSize'] ."', 
+                        '0:". $_POST['time'] ."', 
+                        ". $_POST['result'] .",
+                        DEFAULT,
+                        ". $_POST['moves'] .",
+                        '". $_POST['username'] ."')";
+                $conn->exec($sql);
+
+            }
+            catch(PDOException $e){
+                echo "Connection failed: " . $e->getMessage();
+            }
+        }
+
+    ?>
+
 </head>
 <body onload="loadBoard(); getElementsJogo();">
     <header>
