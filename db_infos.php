@@ -10,6 +10,8 @@ try{
 }
 catch(PDOException $e){
     echo "Connection failed: " . $e->getMessage();
+    $_SESSION['connError']=1;
+    header("location: cadastro.php");
 }
 
 ?>

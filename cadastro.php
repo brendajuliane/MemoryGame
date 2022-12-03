@@ -1,3 +1,8 @@
+<?php 
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+      }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,6 +16,17 @@
     <title>Cadastro</title>
 </head>
 <body>
+<?php 
+                if(isset($_SESSION['connError'])){
+                    echo "<p class='errorMsg'>Conexão com o banco falhou!</p>";
+                    unset($_SESSION['connError']);
+                }
+                if(isset($_SESSION['formFailed'])){
+                    echo '<p class= "errorMsg">Erro ao cadastrar: <br>' .$_SESSION['formFailed'].'</p>';
+                    unset($_SESSION['formFailed']);
+                }
+
+        ?>
     <div class="form">
         <p class="label">Cadastre-se</p>
         <form id="meuForm" action="processCad.php" method="POST">
@@ -28,7 +44,7 @@
             <input type="password" class="form textBox password" placeholder="Confirmar Senha" id="validpassword" name="validpassword" required>
             </div>
             <div class="inputs">
-            <input type="date" class="form textBox date" placeholder="Data de Nascimento" title="DD/MM/YY" id="date" name="date" required>
+            <input type="text" class="form textBox date" placeholder="Data de Nascimento" title="DD/MM/YY" id="date" name="date" required onfocus="(this.type='date')"  onblur="(this.type='text')">
             <input type="email" class="form textBox email" placeholder="E-mail" id="email" name="email" required>
             </div>     
             <button class="YellowButton" >Cadastrar</button>

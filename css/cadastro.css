@@ -15,16 +15,18 @@
 body { 
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .form {
-    height: 45%;
+    height: fit-content;
     width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: center;
     font-family: Inter;
+    padding: 15px;
 }
 
 .inputs{
@@ -137,5 +139,19 @@ a:hover{
 }
 .linkForm{
     font-family: Inter;
+    font-size: 10pt;
+}
+
+/*Error Msg*/
+
+.errorMsg{
+    background-color: rgb(252, 222, 222);
+    color: red;
+    padding: 20px;
+    border: 1px solid rgba(255, 0, 0, 0.349);
+    margin: 5px auto 20px auto;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
     font-size: 10pt;
 }

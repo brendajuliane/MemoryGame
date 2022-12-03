@@ -15,24 +15,27 @@ $password=$_POST["password"];
 $validpassword=$_POST["validpassword"];
 $date=$_POST["date"];
 
-$insertQuery= "INSERT INTO usuario (cpf, nome, username, dtnasc, telefone, email, senha, ranking)
- VALUES ('".$cpf."', '".$name."', '".$user."', '".$date."', '".$cellphone."', '".$email."', '".$password."', 1)";
+$insertQuery= "INSERT INTO usuario (cpf, nome, username, dtnasc, telefone, email, senha)
+ VALUES ('".$cpf."', '".$name."', '".$user."', '".$date."', '".$cellphone."', '".$email."', '".$password."')";
 
-echo "Senha:".$password;
 //validação form
-if($password=$validpassword){
-    //if select username responder NULL entao pode cadastrar
+if($password==$validpassword){
+
     try{
         if($conn->exec($insertQuery)){
-            $_SESSION['success']=1;
-            //header("location: index.php");
+            $_SESSION['logged']=1;
+            header("location: index.php");
         }
     }
     catch(PDOException $e){
-        $_SESSION['success']=$e->getMessage();
-        header("location: cadastro.html");
+        $_SESSION['formFailed']=$e->getMessage();
+        header("location: cadastro.php");
     }
 
+}
+else{
+    $_SESSION['formFailed']="Senhas não coincidem";
+    header("location: cadastro.php");
 }
 
 
