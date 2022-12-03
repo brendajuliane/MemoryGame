@@ -24,7 +24,7 @@ if($password==$validpassword){
     try{
         if($conn->exec($insertQuery)){
             $_SESSION['logged']=1;
-            header("location: index.php");
+            header("location: index.html");
         }
     }
     catch(PDOException $e){
