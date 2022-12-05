@@ -20,7 +20,7 @@
     </div>
     <div id="section">
         <header>
-            <a href="ranking.html" title="Ranking"><img src="img/rankingButton.png" class="icon" alt="Icone para acessar o ranking"></a>
+            <a href="ranking.php" title="Ranking"><img src="img/rankingButton.png" class="icon" alt="Icone para acessar o ranking"></a>
             <a href="perfil.html" title="Perfil"><img src="img/perfilButton.png" class="icon" alt="Icone para acessar o perfil"></a>
             <a href="historico.php" title="Histórico de Jogos"><img src="img/historicoButton.png" class="icon" alt="Icone para acessar o histórico"></a>
             <a href="modalSairApp.html" title="Sair"><img src="img/scapeButton.png" class="icon" alt="Icone para deslogar"></a> 
