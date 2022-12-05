@@ -18,6 +18,8 @@
         function ins_hist(){
             include('db_infos.php');
 
+            session_start();
+
             try {
                 $conn = new PDO("mysql:host=$sname;dbname=jogomemoria", $uname, $pwd);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -30,7 +32,7 @@
                         ". $_POST['result'] .",
                         DEFAULT,
                         ". $_POST['moves'] .",
-                        '". $_POST['username'] ."')";
+                        '". $_SESSION['username'] ."')";
                 $conn->exec($sql);
 
             }
