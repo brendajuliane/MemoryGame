@@ -8,6 +8,9 @@
     <script src="js/gameTimer.js"></script>
     <title>Jogo da memória</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <?php 
+        include("verificaLogin.php");   
+    ?>
 </head>
 <body onload="getElementsIndex()">
     <div class="main">

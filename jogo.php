@@ -46,7 +46,7 @@
 </head>
 <body onload="loadBoard(); getElementsJogo();">
     <header>
-        <a href="index.html" class="goBackButton"><img src="img/close.png" alt=""></a>
+        <a href="index.php" class="goBackButton"><img src="img/close.png" alt=""></a>
     </header>
 
     <div>
