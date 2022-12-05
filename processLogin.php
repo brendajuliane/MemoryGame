@@ -15,12 +15,12 @@
         }
 
         if($result->fetchColumn() > 0) {
-            $_SESSION['username'] = $_POST['user'];
-            $_SESSION['senha'] = $_POST['pass'];
-            header('location:index.html');
+            $_SESSION['user'] = $_POST['user'];
+            $_SESSION['pass'] = $_POST['pass'];
+            header('location:index.php');
         } else {
-            unset ($_SESSION['login']);
-            unset ($_SESSION['senha']);
+            unset($_SESSION['user']);
+            unset($_SESSION['pass']);
             header('location:login.html');
         }
 ?>

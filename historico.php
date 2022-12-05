@@ -12,7 +12,7 @@
 
 <body>
     <header class="header">
-        <a href="index.html" class="goBackButton"><img src="img/back.png" alt=""></a>
+        <a href="index.php" class="goBackButton"><img src="img/back.png" alt=""></a>
     </header>
 
     <div class="historyBox">
