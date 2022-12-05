@@ -16,9 +16,9 @@
         </div>
         <div class="form">
             <p class="label">Login</p>
-            <form action="index.html" method="get">
-                <input type="text" class="form textBox user" placeholder="Usuário" required><br>
-                <input type="password" class="form textBox password" placeholder="Senha" required><br>
+            <form action="processLogin.php" method="post">
+                <input type="text" class="form textBox user" placeholder="Usuário" name="user" required><br>
+                <input type="password" class="form textBox password" placeholder="Senha"name="pass" required><br>
                 <button class="YellowButton">Entrar</button>
             </form>
             <a href="cadastro.php" class="linkForm">Não possui uma conta? Cadastre-se</a>
