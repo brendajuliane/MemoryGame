@@ -19,12 +19,12 @@ $date=$_POST["date"];
 
 $updateQuery = "UPDATE usuario
 SET nome = '$name', cpf = '$cpf', username = '$user', dtnasc = '$date', telefone = '$cellphone', email = '$email', senha = '$password'"
-WHERE user = ''$user'';
+WHERE 'user' = '". $_POST['user'] ."';
 
 if($password==$validpassword){
 
     try{
-        if($conn->exec($updateQuery)){
+        if($conn->exec($updateQuery == TRUE)){
             $_SESSION['logged']=1;
             header("location: index.php");
         }
