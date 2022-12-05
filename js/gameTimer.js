@@ -178,9 +178,6 @@ function sendData(gameResult) {
 
     let moves = document.getElementById("movements").innerHTML;
 
-    // Alterar depois quando tiver sessões de usuário
-    let username = "emanu55";
-
     xhr.send('result=' + result + '&mode=' + mode + '&boardSize=' + boardSize
-        + '&time=' + time + '&moves=' + moves + '&username=' + username);
+        + '&time=' + time + '&moves=' + moves);
 }

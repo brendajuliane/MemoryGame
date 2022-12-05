@@ -22,8 +22,9 @@
         <?php   
         include('db_infos.php');
 
-        // Alterar depois quando tiver sessões de usuário    
-        $username = "emanu55";
+        session_start();
+
+        $username = $_SESSION['username'];
 
         try {
             $conn = new PDO("mysql:host=$sname;dbname=jogomemoria", $uname, $pwd);
