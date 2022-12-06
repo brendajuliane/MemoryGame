@@ -1,5 +1,5 @@
 <?php
-$sname = "localhost:3307";
+$sname = "localhost:3306";
 $uname = "root";
 $pwd = "";
 
