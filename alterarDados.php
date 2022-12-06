@@ -34,20 +34,20 @@
             <p class="label">Alterar Dados Pessoais</p>
             <form action="processAltCad.php" method="POST">
                 <div class="inputs">
-                <input type="text" class="form textBox name" placeholder="Nome Completo", name="name" required>
-                <input type="text" class="form textBox cellphone" placeholder="Celular", name="cellphone" required>
+                <input type="text" class="form textBox name" placeholder="Nome Completo" name="name" maxlength="40" required>
+                <input type="text" class="form textBox cellphone" placeholder="Celular" name="cellphone" maxlength="11" required>
                 </div>
                 <div class="inputs">
-                <input type="text" class="form textBox user" placeholder="Usuário", name="user" required>
-                <input type="text" class="form textBox cpf" placeholder="CPF", name="cpf" required>
+                <input type="text" class="form textBox user" placeholder="Usuário" name="user" maxlength="16" disabled>
+                <input type="text" class="form textBox cpf" placeholder="CPF" name="cpf" maxlength="11" disabled>
                 </div>
                 <div class="inputs">
-                <input type="password" class="form textBox password" placeholder="Senha", name="password" , title="Senha deve ter no mínimo um número, uma letra minúscula, uma letra maiúscula e 8 caracteres" required>
-                <input type="password" class="form textBox password" placeholder="Confirmar Senha", name="validpassword" required>
+                <input type="password" class="form textBox password" placeholder="Senha", name="password" title="Senha deve ter no mínimo um número, uma letra minúscula, uma letra maiúscula e 8 caracteres" maxlength="32" required>
+                <input type="password" class="form textBox password" placeholder="Confirmar Senha", name="validpassword" maxlength="32" required>
                 </div>
                 <div class="inputs">
-                <input type="text" class="form textBox date" placeholder="Data de Nascimento" title="DD/MM/YY" required>
-                <input type="email" class="form textBox email" placeholder="E-mail" required>
+                <input type="text" class="form textBox date" placeholder="Data de Nascimento" title="DD/MM/YY" disabled>
+                <input type="email" class="form textBox email" placeholder="E-mail" name="email" maxlength="40" required>
                 </div>
                 <button class="greenButton">Salvar</button><br><br>
             </form>
