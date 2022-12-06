@@ -24,13 +24,11 @@
 
         session_start();
 
-        $username = $_SESSION['username'];
-
         try {
             $conn = new PDO("mysql:host=$sname;dbname=jogomemoria", $uname, $pwd);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $stmt = $conn->query("SELECT * FROM partida WHERE username ='" . $username . "'");
+            $stmt = $conn->query("SELECT * FROM partida WHERE username ='" . $_SESSION['user'] . "'");
 
             $count = 0;
 

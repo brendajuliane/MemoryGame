@@ -32,7 +32,7 @@
                         ". $_POST['result'] .",
                         DEFAULT,
                         ". $_POST['moves'] .",
-                        '". $_SESSION['username'] ."')";
+                        '". $_SESSION['user'] ."')";
                 $conn->exec($sql);
 
             }
