@@ -47,7 +47,7 @@
                 </div>
                 <div class="inputs">
                 <input type="text" class="form textBox date" placeholder="Data de Nascimento" title="DD/MM/YY" disabled>
-                <input type="email" class="form textBox email" placeholder="E-mail" maxlength="40" required>
+                <input type="email" class="form textBox email" placeholder="E-mail" name="email" maxlength="40" required>
                 </div>
                 <button class="greenButton">Salvar</button><br><br>
             </form>
