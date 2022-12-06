@@ -31,21 +31,21 @@
         <p class="label">Cadastre-se</p>
         <form id="meuForm" action="processCad.php" method="POST">
             <div class="inputs">
-            <input type="text" class="form textBox name" placeholder="Nome Completo" id="name" name="name" required>
-            <input type="text" class="form textBox cellphone" placeholder="Celular" id="cellphone" name="cellphone" required >
+            <input type="text" class="form textBox name" placeholder="Nome Completo" id="name" name="name" maxlength="40" required>
+            <input type="text" class="form textBox cellphone" placeholder="Celular" id="cellphone" name="cellphone" maxlength="11" required >
             </div>
             <div class="inputs" >
-            <input type="text" class="form textBox user" placeholder="Usuário" id="user" name="user" required>
-            <input type="text" class="form textBox cpf" placeholder="CPF" id="cpf" name="cpf" required>
+            <input type="text" class="form textBox user" placeholder="Usuário" id="user" name="user" maxlength="16" required>
+            <input type="text" class="form textBox cpf" placeholder="CPF" id="cpf" name="cpf" maxlength="11" required>
             </div>
             <div class="inputs">
             <input type="password" class="form textBox password" placeholder="Senha" title="Senha deve ter no mínimo um número, uma letra minúscula, uma letra maiúscula e 8 caracteres"
-             id="password" name="password" required>
-            <input type="password" class="form textBox password" placeholder="Confirmar Senha" id="validpassword" name="validpassword" required>
+             id="password" name="password" maxlength="32" required>
+            <input type="password" class="form textBox password" placeholder="Confirmar Senha" id="validpassword" name="validpassword" maxlength="32" required>
             </div>
             <div class="inputs">
             <input type="text" class="form textBox date" placeholder="Data de Nascimento" title="DD/MM/YY" id="date" name="date" required onfocus="(this.type='date')"  onblur="(this.type='text')">
-            <input type="email" class="form textBox email" placeholder="E-mail" id="email" name="email" required>
+            <input type="email" class="form textBox email" placeholder="E-mail" id="email" name="email" maxlength="40" required>
             </div>     
             <button class="YellowButton" >Cadastrar</button>
         </form>
