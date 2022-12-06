@@ -18,8 +18,8 @@ $date=$_POST["date"];
 
 
 $updateQuery = "UPDATE usuario
-SET nome = '$name', cpf = '$cpf', username = '$user', dtnasc = '$date', telefone = '$cellphone', email = '$email', senha = '$password'"
-WHERE 'user' = '". $_POST['user'] ."';
+SET nome ='" . $name . "', cpf = '" . $cpf ."', username = '" . $user . "', dtnasc = '" . $date . "', telefone = '" . $cellphone . "', email = '" . $email . "', senha = '" . $password ."'
+WHERE username = '". $_SESSION['user'] ."'";
 
 if($password==$validpassword){
 

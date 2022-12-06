@@ -1,7 +1,7 @@
 <?php
-$sname = "localhost";
+$sname = "localhost:3307";
 $uname = "root";
-$pwd = "root";
+$pwd = "";
 
 try{
     $conn = new PDO("mysql:host=$sname;dbname=jogomemoria", $uname, $pwd);
