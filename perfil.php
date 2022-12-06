@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+include('db_infos.php');
+
+$sql = 'SELECT nome,username,dtnasc,email,cpf,telefone from usuario';
+
+?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,18 +27,18 @@
                 <div id="perfilImgDiv">
                     <img src="img/perfilImg.png" alt="" id="perfilImg">
                 </div>
-                <h1>Name Lastname</h1>
-                <h2 id="user">User</h2>
+                <h1><?php echo "$row['nome']" ?></h1>
+                <h2><?php echo "$row['username']" ?></h2>
             </div>
             <div class="subInformationalBox">
                 <h2 class="title">Dados cadastrais</h2>
                 <div class="cadastralInformation">
-                    <p>dd/mm/aaaa</p>
-                    <p>exampleofemail@gmail.com.br</p>
+                    <p><?php echo "$row['dtnasc']" ?></p>
+                    <p><?php echo "$row['email']" ?></p>
                 </div>
                 <div class="cadastralInformation">
-                    <p>000.000.000-00</p>
-                    <p>(00) 00000-0000</p>
+                    <p><?php echo "$row['cpf']" ?></p>
+                    <p><?php echo "$row['telefone']" ?></p>
                 </div>
             </div>
         </div>
