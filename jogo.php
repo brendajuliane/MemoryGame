@@ -12,13 +12,13 @@
     <script src="js/gameTimer.js"></script>
 
     <?php
+        include("verificaLogin.php");
+        
         if(array_key_exists('result', $_POST))
             ins_hist();
 
-        function ins_hist(){
+        function ins_hist(){   
             include('db_infos.php');
-
-            session_start();
 
             try {
                 $conn = new PDO("mysql:host=$sname;dbname=jogomemoria", $uname, $pwd);
