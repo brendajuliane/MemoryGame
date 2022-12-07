@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/perfil.css">
     <title>Perfil</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <?php
+        include("verificaLogin.php");
+    ?>
 </head>
 <body>
     <header class="header">
@@ -15,7 +18,6 @@
     </header>
     <main>
         <?php
-        session_start();
 
         include('db_infos.php');
 
