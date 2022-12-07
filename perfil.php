@@ -1,23 +1,3 @@
-<?php
-session_start();
-
-include('db_infos.php');
-
-$sql = "SELECT * FROM usuario WHERE username ='" . $_SESSION['user'] . "'";
-
-try {
-    $conn = new PDO("mysql:host=$sname;dbname=jogomemoria", $uname, $pwd);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $stmt = $conn->query("SELECT * FROM usuario WHERE username ='" . $_SESSION['user'] . "'");
-
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-}
-catch(PDOException $e){
-    echo "Connection failed: " . $e->getMessage();
-}
-
-?> 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,44 +14,81 @@ catch(PDOException $e){
         <a href="index.php" class="goBackButton"><img src="img/back.png" alt=""></a>
     </header>
     <main>
-        <div class="informationBox">
-            <div class="userBox">
-                <div id="perfilImgDiv">
-                    <img src="img/perfilImg.png" alt="" id="perfilImg">
+        <?php
+        session_start();
+
+        include('db_infos.php');
+
+        try {
+            $conn = new PDO("mysql:host=$sname;dbname=jogomemoria", $uname, $pwd);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $conn->query("SELECT * FROM usuario WHERE username ='" . $_SESSION['user'] . "'");
+
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $stmt = $conn->query("SELECT COUNT(*) qty FROM partida WHERE username ='" . $_SESSION['user'] . "'");
+
+            $qty = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $stmt = $conn->query("SELECT COUNT(*) win FROM partida WHERE username ='" . $_SESSION['user'] . "' 
+            and resultado=1");
+
+            $win = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $stmt = $conn->query("SELECT COUNT(*) defeat FROM partida WHERE username ='" . $_SESSION['user'] . "' 
+            and resultado=0");
+
+            $defeat = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            //$stmt = $conn->query("SELECT ROWNUM() pos FROM ranking WHERE username ='" . $_SESSION['user'] . "'");
+
+            //$ranking = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            echo "<div class='informationBox'>
+            <div class='userBox'>
+                <div id='perfilImgDiv'>
+                    <img src='img/perfilImg.png' alt='' id='perfilImg'>
                 </div>
-                <h1><?php echo $row['nome'] ?></h1>
-                <h2><?php echo $row['username'] ?></h2>
+                <h1>". $row['nome'] . "</h1>
+                <h2>". $row['username'] . "</h2>
             </div>
-            <div class="subInformationalBox">
-                <h2 class="title">Dados cadastrais</h2>
-                <div class="cadastralInformation">
-                    <p><?php echo $row['dtnasc'] ?></p>
-                    <p><?php echo $row['email'] ?></p>
+            <div class='subInformationalBox'>
+                <h2 class='title'>Dados cadastrais</h2>
+                <div class='cadastralInformation'>
+                    <p>". $row['dtnasc'] . "</p>
+                    <p>". $row['email'] . "</p>
                 </div>
-                <div class="cadastralInformation">
-                    <p><?php echo $row['cpf'] ?></p>
-                    <p><?php echo $row['telefone'] ?></p>
+                <div class='cadastralInformation'>
+                    <p>". $row['cpf'] . "</p>
+                    <p>". $row['telefone'] . "</p>
                 </div>
             </div>
         </div>
-        <div class="numberBox">
-            <div class="numberInformation">
-                <p class="number">00</p>
-                <p class="information">Ranking</p>
+        <div class='numberBox'>
+            <div class='numberInformation'>
+                <p class='number'>". /* $raking['pos'] . */ "</p>
+                <p class='information'>Ranking</p>
             </div>
-            <div class="numberInformation">
-                <p class="number"><?php $count ?></p>
-                <p class="information">Partidas jogadas</p>
+            <div class='numberInformation'>
+                <p class='number'>". $qty['qty'] . "</p>
+                <p class='information'>Partidas jogadas</p>
             </div>
-            <div class="numberInformation">
-                <p class="numberWin">00</p>
-                <p class="informationWin">Vitórias</p>
+            <div class='numberInformation'>
+                <p class='numberWin'> ". $win['win'] ."</p>
+                <p class='informationWin'>Vitórias</p>
             </div>
-            <div class="numberInformation">
-                <p class="numberDefeat">00</p>
-                <p class="informationDefeat">Derrotas</p>
+            <div class='numberInformation'>
+                <p class='numberDefeat'>". $defeat['defeat'] ."</p>
+                <p class='informationDefeat'>Derrotas</p>
             </div>
-        </div>
+        </div>";
+
+        }
+        catch(PDOException $e){
+            echo "Connection failed: " . $e->getMessage();
+        }
+    ?>
     </main>
     <footer>
         <a href="alterarDados.php" class="editarButton">Editar</a>
