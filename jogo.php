@@ -8,7 +8,7 @@
     <title>Jogo da Memória | Partida</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
-    <script type="text/javascript" src="js/jogo.js"></script>
+    <script src="js/jogo.js"></script>
     <script src="js/gameTimer.js"></script>
 
     <?php
