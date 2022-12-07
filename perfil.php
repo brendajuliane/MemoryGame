@@ -3,7 +3,19 @@ session_start();
 
 include('db_infos.php');
 
-$sql = 'SELECT nome,username,dtnasc,email,cpf,telefone from usuario';
+$sql = "SELECT * FROM usuario WHERE username ='" . $_SESSION['user'] . "'";
+
+try {
+    $conn = new PDO("mysql:host=$sname;dbname=jogomemoria", $uname, $pwd);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $conn->query("SELECT * FROM usuario WHERE username ='" . $_SESSION['user'] . "'");
+
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+catch(PDOException $e){
+    echo "Connection failed: " . $e->getMessage();
+}
 
 ?> 
 <!DOCTYPE html>
@@ -27,18 +39,18 @@ $sql = 'SELECT nome,username,dtnasc,email,cpf,telefone from usuario';
                 <div id="perfilImgDiv">
                     <img src="img/perfilImg.png" alt="" id="perfilImg">
                 </div>
-                <h1><?php echo "$row['nome']" ?></h1>
-                <h2><?php echo "$row['username']" ?></h2>
+                <h1><?php echo $row['nome'] ?></h1>
+                <h2><?php echo $row['username'] ?></h2>
             </div>
             <div class="subInformationalBox">
                 <h2 class="title">Dados cadastrais</h2>
                 <div class="cadastralInformation">
-                    <p><?php echo "$row['dtnasc']" ?></p>
-                    <p><?php echo "$row['email']" ?></p>
+                    <p><?php echo $row['dtnasc'] ?></p>
+                    <p><?php echo $row['email'] ?></p>
                 </div>
                 <div class="cadastralInformation">
-                    <p><?php echo "$row['cpf']" ?></p>
-                    <p><?php echo "$row['telefone']" ?></p>
+                    <p><?php echo $row['cpf'] ?></p>
+                    <p><?php echo $row['telefone'] ?></p>
                 </div>
             </div>
         </div>
@@ -48,7 +60,7 @@ $sql = 'SELECT nome,username,dtnasc,email,cpf,telefone from usuario';
                 <p class="information">Ranking</p>
             </div>
             <div class="numberInformation">
-                <p class="number">00</p>
+                <p class="number"><?php $count ?></p>
                 <p class="information">Partidas jogadas</p>
             </div>
             <div class="numberInformation">

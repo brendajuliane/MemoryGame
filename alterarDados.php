@@ -28,7 +28,7 @@
         ?>
     <div class="containerFlex">
         <header class="header">
-            <a href="perfil.html" class="goBackButton"><img src="img/back.png" alt=""></a>
+            <a href="perfil.php" class="goBackButton"><img src="img/back.png" alt=""></a>
         </header>
         <div class="form">
             <p class="label">Alterar Dados Pessoais</p>
