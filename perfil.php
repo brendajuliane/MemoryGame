@@ -67,8 +67,8 @@
         </div>
         <div class='numberBox'>
             <div class='numberInformation'>
-                <p class='number'>". /* $raking['pos'] . */ "</p>
-                <p class='information'>Ranking</p>
+                <p class='number'></p>
+                <p class='information'></p>
             </div>
             <div class='numberInformation'>
                 <p class='number'>". $qty['qty'] . "</p>
