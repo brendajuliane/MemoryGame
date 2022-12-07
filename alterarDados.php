@@ -1,8 +1,6 @@
-<!-- <?php 
-    if (session_status() !== PHP_SESSION_ACTIVE) {
-        session_start();
-      }
-?> -->
+<?php
+        include("verificaLogin.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
