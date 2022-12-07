@@ -56,12 +56,12 @@
             <div class='subInformationalBox'>
                 <h2 class='title'>Dados cadastrais</h2>
                 <div class='cadastralInformation'>
-                    <p>". $row['dtnasc'] . "</p>
-                    <p>". $row['email'] . "</p>
+                    <p> Data nascimento: ". $row['dtnasc'] . "</p>
+                    <p> E-mail: ". $row['email'] . "</p>
                 </div>
                 <div class='cadastralInformation'>
-                    <p>". $row['cpf'] . "</p>
-                    <p>". $row['telefone'] . "</p>
+                    <p> CPF: ". $row['cpf'] . "</p>
+                    <p> Telefone: ". $row['telefone'] . "</p>
                 </div>
             </div>
         </div>
