@@ -41,10 +41,6 @@
 
             $defeat = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            //$stmt = $conn->query("SELECT ROWNUM() pos FROM ranking WHERE username ='" . $_SESSION['user'] . "'");
-
-            //$ranking = $stmt->fetch(PDO::FETCH_ASSOC);
-
             echo "<div class='informationBox'>
             <div class='userBox'>
                 <div id='perfilImgDiv'>
