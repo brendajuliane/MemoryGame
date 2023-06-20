@@ -30,7 +30,6 @@ After cloning, create a MySQL database named "jogomemoria" and run the follow qu
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
 -- Tempo de geração: 06-Dez-2022 às 10:57
 -- Versão do servidor: 10.6.5-MariaDB
 -- versão do PHP: 7.4.26
