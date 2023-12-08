@@ -11,7 +11,9 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://github.com/brendajuliane/MemoryGame/blob/main/img/siteImg2.jpeg)
+<p align="center">
+  <img src="https://github.com/brendajuliane/MemoryGame/assets/106698124/77bcf8e4-a75e-4927-a76d-546c84b3ba18">
+</p>
 
 
 ## How To Use
